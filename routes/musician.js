@@ -4,10 +4,7 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const schema = require('../store/schema');
 
-// healthcheck
-router.get('/health', (req, res) => {
-  res.status('200').send("Status: ok!");
-});
+
 
 // retrieve all musicians from data store
 router.get('/all', (req, res) => {
