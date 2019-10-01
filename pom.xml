@@ -40,14 +40,14 @@
     <id>deployment</id>
     <name>Internal Releases</name>
     <url>
-      http://unixtrainings.tk:8081/nexus/content/repositories/wscfg-release/
+      http://192.168.1.222:8081/repository/release/
     </url>
   </repository>
   <snapshotRepository>
     <id>deployment</id>
     <name>Internal Snapshot Releases</name>
     <url>
-http://unixtrainings.tk:8081/nexus/content/repositories/wscfg/
+http://192.168.1.222:8081/repository/First-repo/
     </url>
   </snapshotRepository>
 </distributionManagement>
