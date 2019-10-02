@@ -2,7 +2,7 @@
 <modelVersion>4.0.0</modelVersion>
 <groupId>com-wscfg</groupId>
 <artifactId>music-app</artifactId>
-<version>M10012019</version>
+<version>M10-01-2019</version>
 <packaging>jar</packaging>
 <build>
   <sourceDirectory>.</sourceDirectory>
