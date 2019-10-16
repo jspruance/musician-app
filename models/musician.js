@@ -59,6 +59,7 @@ class Musician {
     delete newStore[id];
     this.store = newStore;
     console.log("ADDED DEBUG here!!!!!!");
+    console.log("2ADDED DEBUG here!!!!!!");
     return callback(null, id);
   }
 
