@@ -58,8 +58,10 @@ class Musician {
     const newStore = Object.assign({}, this.store);
     delete newStore[id];
     this.store = newStore;
+    console.log("ADDED DEBUG here!!!!!!");
     return callback(null, id);
   }
+
   
 }
 
