@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "music2020-e957"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "music2020-e957"
+    spec:
+      containers:
+        - name: "music2020-e957"
+          image: "music2020acr.azurecr.io/music2020"
+          ports:
+          - containerPort: 3001
