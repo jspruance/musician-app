@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "musicapp-2c0e"
+    labels:
+        app: "musicapp-2c0e"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 3001
+      targetPort: 3001
+      protocol: TCP
+      name: http
+    selector:
+        app: "musicapp-2c0e"
