@@ -3,13 +3,19 @@ module.exports = {
   Fardin: {
     firstName: 'Fardin',
     lastName: 'Sadry',
-    genre: 'JAZZ',
+    genre: 'Mahali',
   },
 
   davis: {
     firstName: 'Gustav',
     lastName: 'Ejstes',
     genre: 'Rock',
+  },
+  
+  Tuba: {
+    firstName: 'Tuba',
+    lastName: 'Sadry',
+    genre: 'Watani',
   },
 
   mccartney: {
