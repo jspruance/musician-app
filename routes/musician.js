@@ -5,6 +5,7 @@ const jsonParser = bodyParser.json();
 const schema = require('../store/schema');
 
 // healthcheck
+// added new comment to trigger a build
 router.get('/health', (req, res) => {
   res.status('200').send("Status: ok!");
 });
