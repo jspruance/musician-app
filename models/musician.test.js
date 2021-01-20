@@ -26,7 +26,7 @@ describe('Test suite for Musician model', () => {
     });
   });
 
-  test('Vertfy model get error case - musician does not exist', () => {
+  test('Vertfy model get error case - musician does not exist for sure', () => {
     musician.getMusician('xxx', (err, musician) => {
       expect(err).not.toBeNull();
       expect(err).toBe('Musician does not exist');
