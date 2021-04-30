@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "musicapp-dfe1"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "musicapp-dfe1"
+    spec:
+      containers:
+        - name: "musicapp-dfe1"
+          image: "production2020.azurecr.io/musicapp"
+          ports:
+          - containerPort: 3001

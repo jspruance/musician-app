@@ -13,6 +13,8 @@ app.use('/musician', musicianRoutes);
 
 app.use(express.static('public'));
 
+app.use('/healthcheck', require('./routes/healthcheck.routes'));
+
 // Index route
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build/index.html'));
@@ -29,3 +31,4 @@ const server = app.listen(port, () => {
 });
 
 module.exports = server;
+

@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "musicapp-6a1b"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "musicapp-6a1b"
+    spec:
+      containers:
+        - name: "musicapp-6a1b"
+          image: "appmusicacr.azurecr.io/musicapp"
+          ports:
+          - containerPort: 3001

@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "music2020-e957"
+    labels:
+        app: "music2020-e957"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: music2020fc08-music2020-e957.b6afdc96532440d29239.centralus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "music2020-e957"
+                servicePort: 3001

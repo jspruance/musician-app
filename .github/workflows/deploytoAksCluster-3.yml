@@ -1,0 +1,63 @@
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: actions/checkout@master
+    
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Create ACR
+      id: create-acr
+      run: |
+        az acr create -n production2020 -g production202080eb-rg --location "East US" --sku Standard --admin-enabled
+        echo "::set-output name=acr_username::`az acr credential show -n production2020 --query username | xargs`"
+        echo "::set-output name=acr_password::`az acr credential show -n production2020 --query passwords[0].value | xargs`"
+        echo "::add-mask::`az acr credential show -n production2020 --query passwords[0].value | xargs`"
+
+    - uses: azure/docker-login@v1
+      with:
+        login-server: production2020.azurecr.io
+        username: ${{ steps.create-acr.outputs.acr_username }}
+        password: ${{ steps.create-acr.outputs.acr_password }}
+
+    - name: Build and push image to ACR
+      id: build-image
+      run: |
+        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t production2020.azurecr.io/musicapp:${{ github.sha }}
+        docker push production2020.azurecr.io/musicapp:${{ github.sha }}
+    
+    - uses: azure/k8s-set-context@v1
+      id: login
+      with:
+         kubeconfig: ${{ secrets.aks_musicapp_kubeConfig }}
+    
+    - name: Create namespace
+      run: |
+        namespacePresent=`kubectl get namespace | grep musicapp3a78 | wc -l`
+        if [ $namespacePresent -eq 0 ]
+        then
+            echo `kubectl create namespace musicapp3a78`
+        fi
+
+    - uses: azure/k8s-create-secret@v1
+      with:
+        namespace: musicapp3a78
+        container-registry-url: production2020.azurecr.io
+        container-registry-username: ${{ steps.create-acr.outputs.acr_username }}
+        container-registry-password: ${{ steps.create-acr.outputs.acr_password }}
+        secret-name: musicappdockerauth
+       
+    - uses: azure/k8s-deploy@v1
+      with:
+        namespace: musicapp3a78
+        manifests: |
+          manifests/deployment-3.yml
+          manifests/service-3.yml
+        images: |
+          production2020.azurecr.io/musicapp:${{ github.sha }}
+        imagepullsecrets: |
+          musicappdockerauth
