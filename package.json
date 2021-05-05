@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon app.js",
-    "start-dev": "nodemon app.js"
+    "start-dev": "nodemon app.js",
+    "aws-eb:prod": "npm run build && npm run start:prod"
   },
   "author": "Jonathan Spruance",
   "license": "ISC",
@@ -22,5 +23,4 @@
     "nodemon": "^1.18.11",
     "supertest": "^4.0.0"
   },
-  "aws-eb:prod": "npm run build && npm run start:prod"
 }
