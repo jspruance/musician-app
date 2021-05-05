@@ -21,5 +21,6 @@
     "moxios": "^0.4.0",
     "nodemon": "^1.18.11",
     "supertest": "^4.0.0"
-  }
+  },
+  "aws-eb:prod": "npm run build && npm run start:prod"
 }
