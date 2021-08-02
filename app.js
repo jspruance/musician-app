@@ -6,7 +6,8 @@ const Musician = require('./models/musician');
 const musicianRoutes = require('./routes/musician');
 
 const app = express();
-const port = process.env.PORT || 3001;
+// const port = process.env.PORT || 3000;
+// app.listen(port, () => console.log("Server started on port " + port);
 
 // include routes
 app.use('/musician', musicianRoutes);
@@ -24,8 +25,10 @@ musician.initStore(initialStoreData);
 app.locals.musician = musician;
 
 // start server
-const server = app.listen(port, () => {
-  console.log("Server started on port " + port);
-});
+// const server = app.listen(port, () => {
+//   console.log("Server started on port " + port);
+// });
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log("Server started on port " + port);
 
 module.exports = server;
