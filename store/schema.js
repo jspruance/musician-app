@@ -5,3 +5,4 @@ module.exports = schema = yup.object().shape({
   lastName: yup.string().max(50, 'Value cannot exceed 50 characters').required(),
   //genre: yup.string().matches(/(JAZZ|ROCK|BLUES)/).required()
 });
+//Access allow
