@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    on-failure: CONTINUE
+    commands:
+       - yarn
+  tests:
+    on-failure: CONTINUE
+    commands:
+       - yarn run test
+  build:
+    on-failure: CONTINUE
+    commands:
+       - yarn run build
