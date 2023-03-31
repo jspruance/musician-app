@@ -1,12 +1,13 @@
 // model object with methods for store CRUD operations
-class Musician {
+export default class Musician {
+  private store: string;
 
-  constructor(store) {
+  constructor(store: any) {
     this.store = store;
   }
   
   // hydrate store with initial data
-  initStore(data) {
+  initStore(data: any) {
     const newStore = Object.assign(this.store, data);
     this.store = newStore;
   };
@@ -43,7 +44,7 @@ class Musician {
     if (id !== musician.firstName.toLowerCase()) {
       return callback("Musician id in request path and body do not match.");
     }
-    const newStore = Object.assign({}, this.store);
+    const newStore: any = Object.assign({}, this.store);
     if(this.isMusicianInStore(id)) {
       const newMusician = Object.assign(this.store[id], musician);
       newStore[id] = newMusician;
@@ -55,12 +56,10 @@ class Musician {
   }
 
   deleteMusician(id, callback) {
-    const newStore = Object.assign({}, this.store);
+    const newStore: any = Object.assign({}, this.store);
     delete newStore[id];
     this.store = newStore;
     return callback(null, id);
   }
   
 }
-
-module.exports = Musician;

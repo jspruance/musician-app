@@ -1,0 +1,33 @@
+{
+    "compilerOptions": { /* Docs: [https://www.typescriptlang.org/tsconfig](https://www.typescriptlang.org/tsconfig) */
+      "target": "ES2020",
+      "module": "commonjs",
+      "outDir": "bin",
+      "rootDir": ".",
+      "strict": true,
+      "noImplicitAny": false,
+      "strictNullChecks": true,
+      "checkJs": true,
+      "allowJs": true,
+      "moduleResolution": "node",
+      "types": [
+        "node"
+      ],
+      "lib": [
+        "es6"
+      ],
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "allowUnreachableCode": true,
+       "useUnknownInCatchVariables": false,  // TypeScript 4.4+ only!
+  },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "node_modules",
+      "<node_internals>/**",
+    ]
+  }

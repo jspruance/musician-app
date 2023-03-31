@@ -1,4 +1,4 @@
-import React, { Component, Fragment }  from 'react';
+import React, { Component }  from 'react';
 
 export default class MusicianAdmin extends Component {
 
@@ -25,9 +25,9 @@ export default class MusicianAdmin extends Component {
         <div className="box musician-card notification is-success">
           {
             this.props.isAdmin && 
-            <Fragment>
+            <>
               <button onClick={event => this.props.handleDeleteMusician(this.props.id, event)} className="delete"></button>
-            </Fragment>
+            </>
           }
           {
             this.state.isEditMode 

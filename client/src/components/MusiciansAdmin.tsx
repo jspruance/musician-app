@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Musician from './Musician';
 import axios from "axios";
 
@@ -28,8 +28,8 @@ export default class MusiciansAdmin extends Component {
 
   handleUpdateMusician = (id, name) => {
     // add call to AWS API Gateway update musician endpoint here
-    const musicianToUpdate = [...this.state.musicians].find(musician => musician.id === id);
-    const updatedMusicians = [...this.state.musicians].filter(musician => musician.id !== id);
+    const musicianToUpdate: any = [...this.state.musicians].find((musician: any) => musician.id === id);
+    const updatedMusicians: any = [...this.state.musicians].filter((musician: any) => musician.id !== id);
     musicianToUpdate.musicianname = name;
     updatedMusicians.push(musicianToUpdate);
     this.setState({musicians: updatedMusicians});
@@ -40,7 +40,7 @@ export default class MusiciansAdmin extends Component {
     event.preventDefault();
     try {
       await axios.delete(`/musician/${id}`);
-      const updatedMusicians = await [...this.state.musicians].filter(musician => musician.firstName.toLowerCase() !== id);
+      const updatedMusicians = await [...this.state.musicians].filter((musician: any) => musician.firstName.toLowerCase() !== id);
       this.setState({musicians: updatedMusicians});
     }catch(err) {
       console.log(err);
@@ -69,7 +69,7 @@ export default class MusiciansAdmin extends Component {
 
   render() {
     return (
-      <Fragment>
+      <>
         <section className="section">
           <div className="container">
             <p className="subtitle is-5">Add and remove musicians using the form below:</p>
@@ -121,7 +121,7 @@ export default class MusiciansAdmin extends Component {
               </div>
               <div className="column is-two-thirds">
                 {
-                  this.state.musicians.map((musician, index) =>
+                  this.state.musicians.map((musician: any, index) =>
                     <Musician
                         isAdmin={true}
                         handleUpdateMusician={this.handleUpdateMusician}
@@ -138,7 +138,7 @@ export default class MusiciansAdmin extends Component {
             </div>
           </div>
         </section>
-      </Fragment>
+      </>
     )
   }
 }

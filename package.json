@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
+    "build": "tsc -b -v",
     "start": "nodemon app.js",
     "start-dev": "nodemon app.js"
   },
@@ -14,12 +15,20 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "winston": "^3.2.1",
-    "yup": "^0.26.10"
+    "yup": "^0.26.10",
+    "typescript": "^5.0.3"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/express": "^4.17.17",
+    "@types/moxios": "^0.4.15",
+    "@types/nodemon": "^1.19.2",
+    "@types/supertest": "^2.0.12",
+    "@types/yup": "^0.26.37",
     "jest": "^24.7.1",
     "moxios": "^0.4.0",
     "nodemon": "^1.18.11",
-    "supertest": "^4.0.0"
+    "supertest": "^4.0.0",
+    "ts-node": "^10.9.1"
   }
 }

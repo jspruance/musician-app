@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Musician from './Musician';
 import axios from "axios";
 const config = require('../config.json');
@@ -21,7 +21,7 @@ export default class Musicians extends Component {
 
   render() {
     return (
-      <Fragment>
+      <>
         <section className="section">
           <div className="container">
             <h1>Energy Musicians</h1>
@@ -32,7 +32,7 @@ export default class Musicians extends Component {
                 <div className="tile is-ancestor">
                     { 
                       this.state.musicians && this.state.musicians.length > 0
-                      ? this.state.musicians.map(musician => <Musician name={musician.musicianname} id={musician.id} key={musician.id} />)
+                      ? this.state.musicians.map((musician: any) => <Musician name={musician.musicianname} id={musician.id} key={musician.id} />)
                       : <div className="tile notification is-warning">No musicians available</div>
                     }
                 </div>
@@ -40,7 +40,7 @@ export default class Musicians extends Component {
             </div>
           </div>
         </section>
-      </Fragment>
+      </>
     )
   }
 }
