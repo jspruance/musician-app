@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
+// @ts-ignore
 library.add(faEdit);
 
 class App extends Component {

@@ -1,5 +1,6 @@
 {
-    "compilerOptions": { /* Docs: [https://www.typescriptlang.org/tsconfig](https://www.typescriptlang.org/tsconfig) */
+    "compilerOptions": {
+      "jsx": "react", /* Docs: [https://www.typescriptlang.org/tsconfig](https://www.typescriptlang.org/tsconfig) */
       "target": "ES2020",
       "module": "commonjs",
       "outDir": "bin",
@@ -11,10 +12,12 @@
       "allowJs": true,
       "moduleResolution": "node",
       "types": [
-        "node"
+        "node",
+        "jest"
       ],
       "lib": [
-        "es6"
+        "es6",
+        "dom"
       ],
       "esModuleInterop": true,
       "skipLibCheck": true,
@@ -25,7 +28,7 @@
     "include": [
       "src/**/*.ts",
       "src/**/*.js"
-, "src/components/Navbar.tsx", "src/components/MusiciansAdmin.tsx", "src/components/Musicians.tsx", "src/components/Musician.tsx", "src/components/HomeContent.tsx", "src/components/Home.tsx", "src/components/Hero.tsx", "src/components/FormErrors.tsx", "src/components/Footer.tsx", "src/App.tsx", "src/index.tsx"    ],
+, "src/components/Navbar.tsx", "src/components/MusiciansAdmin.tsx", "src/components/Musicians.tsx", "src/components/Musician.tsx", "src/components/HomeContent.tsx", "src/components/Home.tsx", "src/components/Hero.tsx", "src/components/FormErrors.tsx", "src/components/Footer.tsx", "src/App.tsx", "src/index.tsx", "src/App.test.tsx"    ],
     "exclude": [
       "node_modules",
       "<node_internals>/**",

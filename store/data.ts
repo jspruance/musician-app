@@ -1,5 +1,5 @@
 // A collection of musicians where the key is the unique id
-module.exports = {
+export default {
   coltrane: {
     firstName: 'John',
     lastName: 'Coltrane',

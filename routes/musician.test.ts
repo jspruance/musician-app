@@ -1,18 +1,18 @@
-const request = require('supertest');
-const store = require('../store/datastore');
-const initialStoreData = require('../store/data');
-const musicianRoutes = require('./musician');
-const Musician = require('../models/musician');
+import request from 'supertest';
+import store from '../store/datastore';
+import initialStoreData from '../store/data';
+import musicianRoutes from './musician';
+import Musician from '../models/musician';
 
 beforeAll(done => {
   // initialize store
-  musician = new Musician(store);
-  musician.initStore(initialStoreData);
+  let musicianIns = new Musician(store);
+  musicianIns.initStore(initialStoreData);
   done();
 });
 
 beforeEach(() => {
-  server = require('../app');
+  let server = require('../app');
 });
 
 afterEach(() => {

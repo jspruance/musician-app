@@ -1,5 +1,6 @@
 {
     "compilerOptions": { /* Docs: [https://www.typescriptlang.org/tsconfig](https://www.typescriptlang.org/tsconfig) */
+      "jsx": "react",  
       "target": "ES2020",
       "module": "commonjs",
       "outDir": "bin",
@@ -11,7 +12,8 @@
       "allowJs": true,
       "moduleResolution": "node",
       "types": [
-        "node"
+        "node",
+        "jest"
       ],
       "lib": [
         "es6"
@@ -23,9 +25,9 @@
        "useUnknownInCatchVariables": false,  // TypeScript 4.4+ only!
   },
     "include": [
-      "src/**/*.ts",
-      "src/**/*.js"
-    ],
+      "**/*.ts",
+      "**/*.js"
+, "client/src/App.test.tsx"    ],
     "exclude": [
       "node_modules",
       "<node_internals>/**",

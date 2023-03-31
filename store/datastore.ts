@@ -1,2 +1,2 @@
 // primary store object
-module.exports = {};
+export default {};

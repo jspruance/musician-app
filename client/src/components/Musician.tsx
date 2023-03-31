@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 
-export default class MusicianAdmin extends Component {
+export default class MusicianAdmin extends Component<any> {
 
   state = {
     isEditMode: false,
