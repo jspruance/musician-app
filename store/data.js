@@ -1,38 +1,38 @@
 // A collection of musicians where the key is the unique id
 module.exports = {
   coltrane: {
-    firstName: 'John',
-    lastName: 'Coltrane',
-    genre: 'JAZZ',
+    firstName: 'Arijit',
+    lastName: 'Singh',
+    genre: 'sad',
   },
 
   davis: {
-    firstName: 'Gustav',
-    lastName: 'Ejstes',
-    genre: 'Rock',
+    firstName: 'Armaan',
+    lastName: 'Malik',
+    genre: 'Romantic',
   },
 
   mccartney: {
-    firstName: 'Paul',
-    lastName: 'McCartney',
-    genre: 'ROCK',
+    firstName: 'Pallak',
+    lastName: 'Mucchal',
+    genre: 'Romantic',
   },
 
   hendrix: {
-    firstName: 'Jimi',
-    lastName: 'Hendrix',
-    genre: 'Rock',
+    firstName: 'YoYo',
+    lastName: 'Singh',
+    genre: 'Rap',
   },
 
   cobain: {
-    firstName: 'Kurt',
-    lastName: 'Cobain',
-    genre: 'Rock',
+    firstName: 'Amrit',
+    lastName: 'Maan',
+    genre: 'Punjabi',
   },
 
   king: {
-    firstName: 'Bo',
-    lastName: 'Hansson',
-    genre: 'Rock',
+    firstName: 'Jubin',
+    lastName: 'Nautiyal',
+    genre: 'Sad',
   },
 };
