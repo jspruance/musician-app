@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "start-dev": "nodemon app.js"
   },
   "author": "Jonathan Spruance",
